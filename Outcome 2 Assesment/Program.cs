@@ -28,6 +28,10 @@ namespace Outcome_2_Assesment
                 Console.WriteLine("Please enter a date (dd/MM/yyyy):");
                 string userInput = Console.ReadLine();
 
+                // These are the links that helped me with the DateTime
+                //https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling
+                //https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=net-9.0
+
                 try
                 {
                     userDate = DateTime.ParseExact(userInput, "dd/MM/yyyy", CultureInfo.InvariantCulture);
