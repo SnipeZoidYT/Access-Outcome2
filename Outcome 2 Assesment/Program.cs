@@ -60,7 +60,7 @@ namespace Outcome_2_Assesment
 
                 while (roomType.Length > 4)
                 {
-                    Console.WriteLine("You have went over the maximum rooms");
+                    Console.WriteLine("You have gone over the maximum rooms");
 
                     Console.WriteLine("Enter what room type you would like(you can pick multiple by using commas).");
                     Console.WriteLine("Max rooms per booking is 4.");
@@ -99,7 +99,11 @@ namespace Outcome_2_Assesment
                 }
             }
 
+
+            // I used this line for one of my tests
             //Console.WriteLine($"£{cost:F2}");
+
+
             while (!isValidNight)
             {
                 Console.WriteLine("How many nights would you like to stay?(Max amount of nights is 14)");
@@ -107,9 +111,9 @@ namespace Outcome_2_Assesment
 
                 night = double.Parse(Console.ReadLine());
 
-                if (night < 0)
+                if (night < 1)
                 {
-                    Console.WriteLine("Haha good try but you cant have - nights");
+                    Console.WriteLine("Haha good try but you cant have less than 1 night stay");
                 }
                 else if (night > 14)
                 {
@@ -147,7 +151,9 @@ namespace Outcome_2_Assesment
             }
             totalVAT = total * 1.20;
 
+            // I used this line for one of my tests
             //Console.WriteLine(total);
+
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"Date:{userDate} for {night} nights ");
