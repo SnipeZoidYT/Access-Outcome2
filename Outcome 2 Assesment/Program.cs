@@ -18,11 +18,12 @@ namespace Outcome_2_Assesment
             double totalVAT;
             DateTime userDate = DateTime.MinValue;
 
-
+            // Asks for the family name
             Console.WriteLine("Enter your family name.");
             Console.Write(": ");
             familyName = Console.ReadLine();
 
+            // Keep asking for date until valid format is entered
             while (!isValidDate)
             {
                 Console.WriteLine("Please enter a date (dd/MM/yyyy):");
@@ -44,7 +45,7 @@ namespace Outcome_2_Assesment
                 }
             }
 
-
+            // Handles room selection and validation
             while (!isValidRoom)
             {
                 Console.WriteLine("Enter what room type you would like(you can pick multiple by using commas).");
@@ -75,7 +76,7 @@ namespace Outcome_2_Assesment
 
                 }
 
-
+                // Calculates cost based on selected rooms
                 foreach (string room in roomType)
                 {
                     switch (room.Trim())
@@ -99,11 +100,10 @@ namespace Outcome_2_Assesment
                 }
             }
 
-
             // I used this line for one of my tests
             //Console.WriteLine($"£{cost:F2}");
 
-
+            // Validates number of nights
             while (!isValidNight)
             {
                 Console.WriteLine("How many nights would you like to stay?(Max amount of nights is 14)");
@@ -126,6 +126,7 @@ namespace Outcome_2_Assesment
                 }
             }
 
+            // Applies discount if eligible
             if (roomType.Length >= 3)
             {
                 if (night >= 7)
@@ -134,26 +135,27 @@ namespace Outcome_2_Assesment
                     cost = cost * night;
                     total = cost / 100 * discount;
                     total = cost - total;
-                    
+
                 }
                 else
                 {
                     Console.WriteLine("You cant get the 10% discount as you are staying less than 7 nights.");
                     total = cost * night;
-                   
+
                 }
             }
             else
             {
                 Console.WriteLine("You cant get the 10% discount as you have booked less than 3 rooms.");
                 total = cost * night;
-         
+
             }
             totalVAT = total * 1.20;
 
             // I used this line for one of my tests
             //Console.WriteLine(total);
 
+            // Prints the final bill
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"Date:{userDate} for {night} nights ");
@@ -174,7 +176,6 @@ namespace Outcome_2_Assesment
             Console.WriteLine($"|   Total: £{totalVAT:F2}           |");
             Console.WriteLine($"|                             |");
             Console.WriteLine(" -----------------------------");
-
         }
     }
 }
